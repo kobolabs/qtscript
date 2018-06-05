@@ -928,7 +928,7 @@ static double getDSTOffset(ExecState* exec, double ms, double utcOffset)
 double getUTCOffset(ExecState* exec)
 {
     double utcOffset = exec->globalData().cachedUTCOffset;
-    if (!isnan(utcOffset))
+    if (!std::isnan(utcOffset))
         return utcOffset;
     exec->globalData().cachedUTCOffset = calculateUTCOffset();
     return exec->globalData().cachedUTCOffset;
