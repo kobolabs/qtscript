@@ -490,7 +490,7 @@ namespace JSC {
             u.asBits.tag = CellTag;
         else
             u.asBits.tag = EmptyValueTag;
-        u.asBits.payload = reinterpret_cast<int32_t>(ptr);
+        u.asBits.payload = reinterpret_cast<intptr_t>(ptr);
 #if ENABLE(JSC_ZOMBIES)
         ASSERT(!isZombie());
 #endif
@@ -502,7 +502,7 @@ namespace JSC {
             u.asBits.tag = CellTag;
         else
             u.asBits.tag = EmptyValueTag;
-        u.asBits.payload = reinterpret_cast<int32_t>(const_cast<JSCell*>(ptr));
+        u.asBits.payload = reinterpret_cast<intptr_t>(const_cast<JSCell*>(ptr));
 #if ENABLE(JSC_ZOMBIES)
         ASSERT(!isZombie());
 #endif
